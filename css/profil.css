@@ -454,3 +454,17 @@
     cursor: pointer;
   }
 }
+
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logout-link {
+  color: #ff6b6b !important; /* Utilise la couleur primaire pour indiquer une action critique */
+}
+
+.logout-link:hover {
+  background-color: rgba(255, 107, 107, 0.1);
+}
