@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Profil - CulinApp</title>
+  
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/profil.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="profile-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="profile-image">
+          <img src="images/default-avatar.png" alt="Photo de profil">
+          <button class="edit-profile-pic">
+            <i class="fas fa-camera"></i>
+          </button>
+        </div>
+        <h2 class="user-name">Salma</h2>
+        <p class="user-bio">Passionnée de cuisine méditerranéenne</p>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <ul>
+          <li>
+            <a href="#" class="sidebar-link active" data-section="dashboard">
+              <i class="fas fa-th-large"></i>
+              <span>Tableau de bord</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar-link" data-section="my-recipes">
+              <i class="fas fa-utensils"></i>
+              <span>Mes recettes</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar-link" data-section="favorites">
+              <i class="fas fa-heart"></i>
+              <span>Coups de cœur</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar-link" data-section="settings">
+              <i class="fas fa-cog"></i>
+              <span>Paramètres</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <a href="/index.html" class="sidebar-link">
+          <i class="fas fa-arrow-left"></i>
+          <span>Retour</span>
+        </a>
+      </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="profile-content">
+      <header class="profile-header">
+        <h1 id="section-title">Tableau de bord</h1>
+        <div class="profile-actions">
+          <a href="create-recipe.html" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Créer une recette
+          </a>
+        </div>
+      </header>
+      
+      <!-- Dashboard Section -->
+      <section id="dashboard-section" class="profile-section active">
+        <div class="stats-cards">
+          <div class="stat-card">
+            <i class="fas fa-utensils"></i>
+            <div class="stat-info">
+              <h3>12</h3>
+              <p>Recettes créées</p>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <i class="fas fa-heart"></i>
+            <div class="stat-info">
+              <h3>45</h3>
+              <p>Favoris</p>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <i class="fas fa-thumbs-up"></i>
+            <div class="stat-info">
+              <h3>87</h3>
+              <p>J'aime reçus</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="recent-activity">
+          <h2>Activité récente</h2>
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fas fa-plus-circle"></i>
+              </div>
+              <div class="activity-details">
+                <p>Vous avez créé une nouvelle recette <a href="#">"Tarte aux fraises"</a></p>
+                <span class="activity-time">Il y a 2 heures</span>
+              </div>
+            </div>
+            
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <div class="activity-details">
+                <p>Vous avez aimé la recette <a href="#">"Tiramisu classique"</a></p>
+                <span class="activity-time">Hier</span>
+              </div>
+            </div>
+            
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fas fa-comment"></i>
+              </div>
+              <div class="activity-details">
+                <p>Vous avez commenté la recette <a href="#">"Quiche lorraine"</a></p>
+                <span class="activity-time">Il y a 3 jours</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- My Recipes Section -->
+      <section id="my-recipes-section" class="profile-section">
+        <div class="filters">
+          <div class="search-bar">
+            <input type="text" placeholder="Rechercher dans mes recettes...">
+            <button><i class="fas fa-search"></i></button>
+          </div>
+          
+          <div class="sort-options">
+            <select>
+              <option value="recent">Plus récentes</option>
+              <option value="popular">Plus populaires</option>
+              <option value="name-asc">Nom (A-Z)</option>
+              <option value="name-desc">Nom (Z-A)</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="recipes-grid">
+          <!-- Exemple de carte recette avec options d'édition -->
+          <div class="recipe-card">
+            <div class="card-options">
+              <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
+              <button class="delete-btn"><i class="fas fa-trash"></i></button>
+            </div>
+            
+            <div class="recipe-image">
+              <img src="images/recipe-placeholder.jpg" alt="Tarte aux pommes">
+            </div>
+            <div class="recipe-content">
+              <h3>Tarte aux pommes</h3>
+              <p>Un délicieux dessert traditionnel français avec des pommes caramélisées.</p>
+              <div class="recipe-meta">
+                <span><i class="fas fa-clock"></i> 45 min</span>
+                <span><i class="fas fa-signal"></i> Facile</span>
+                <span><i class="fas fa-heart"></i> 23 j'aime</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="recipe-card">
+            <div class="card-options">
+              <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
+              <button class="delete-btn"><i class="fas fa-trash"></i></button>
+            </div>
+            
+            <div class="recipe-image">
+              <img src="images/recipe-placeholder-2.jpg" alt="Salade niçoise">
+            </div>
+            <div class="recipe-content">
+              <h3>Salade niçoise</h3>
+              <p>Une salade fraîche et légère typique de la région de Nice.</p>
+              <div class="recipe-meta">
+                <span><i class="fas fa-clock"></i> 20 min</span>
+                <span><i class="fas fa-signal"></i> Facile</span>
+                <span><i class="fas fa-heart"></i> 17 j'aime</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="recipe-card">
+            <div class="card-options">
+              <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
+              <button class="delete-btn"><i class="fas fa-trash"></i></button>
+            </div>
+            
+            <div class="recipe-image">
+              <img src="images/recipe-placeholder-3.jpg" alt="Coq au vin">
+            </div>
+            <div class="recipe-content">
+              <h3>Coq au vin</h3>
+              <p>Un plat traditionnel français à base de poulet mijoté dans du vin rouge.</p>
+              <div class="recipe-meta">
+                <span><i class="fas fa-clock"></i> 2h30</span>
+                <span><i class="fas fa-signal"></i> Moyen</span>
+                <span><i class="fas fa-heart"></i> 38 j'aime</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="pagination">
+          <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+          <span class="page-info">Page 1 sur 2</span>
+          <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </section>
+      
+      <!-- Favorites Section -->
+      <section id="favorites-section" class="profile-section">
+        <div class="filters">
+          <div class="search-bar">
+            <input type="text" placeholder="Rechercher dans mes favoris...">
+            <button><i class="fas fa-search"></i></button>
+          </div>
+          
+          <div class="sort-options">
+            <select>
+              <option value="recent">Plus récentes</option>
+              <option value="name-asc">Nom (A-Z)</option>
+              <option value="name-desc">Nom (Z-A)</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="recipes-grid">
+          <div class="recipe-card">
+            <div class="recipe-image">
+              <img src="images/recipe-placeholder-4.jpg" alt="Crème brûlée">
+            </div>
+            <div class="recipe-content">
+              <h3>Crème brûlée</h3>
+              <p>Un dessert français classique avec une crème onctueuse et une croûte caramélisée.</p>
+              <div class="recipe-meta">
+                <span><i class="fas fa-clock"></i> 1h</span>
+                <span><i class="fas fa-signal"></i> Moyen</span>
+                <span><i class="fas fa-user"></i> Par Marie L.</span>
+              </div>
+              <button class="favorite-btn active" title="Retirer des favoris">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+          </div>
+          
+          <div class="recipe-card">
+            <div class="recipe-image">
+              <img src="images/recipe-placeholder-5.jpg" alt="Ratatouille">
+            </div>
+            <div class="recipe-content">
+              <h3>Ratatouille</h3>
+              <p>Un plat estival provençal riche en légumes et en saveurs méditerranéennes.</p>
+              <div class="recipe-meta">
+                <span><i class="fas fa-clock"></i> 1h30</span>
+                <span><i class="fas fa-signal"></i> Facile</span>
+                <span><i class="fas fa-user"></i> Par Thomas B.</span>
+              </div>
+              <button class="favorite-btn active" title="Retirer des favoris">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Settings Section -->
+      <section id="settings-section" class="profile-section">
+        <div class="settings-form">
+          <h2>Informations personnelles</h2>
+          <form>
+            <div class="form-group">
+              <label for="username">Nom d'utilisateur</label>
+              <input type="text" id="username" value="JohnDoe" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" value="john.doe@example.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="bio">Biographie</label>
+              <textarea id="bio" rows="3">Passionné de cuisine méditerranéenne</textarea>
+            </div>
+            
+            <h2>Modifier le mot de passe</h2>
+            
+            <div class="form-group">
+              <label for="current-password">Mot de passe actuel</label>
+              <input type="password" id="current-password">
+            </div>
+            
+            <div class="form-group">
+              <label for="new-password">Nouveau mot de passe</label>
+              <input type="password" id="new-password">
+            </div>
+            
+            <div class="form-group">
+              <label for="confirm-new-password">Confirmer le nouveau mot de passe</label>
+              <input type="password" id="confirm-new-password">
+            </div>
+            
+            <h2>Paramètres de notification</h2>
+            
+            <div class="form-checkbox">
+              <input type="checkbox" id="email-notif" checked>
+              <label for="email-notif">Recevoir des notifications par email</label>
+            </div>
+            
+            <div class="form-checkbox">
+              <input type="checkbox" id="like-notif" checked>
+              <label for="like-notif">Être notifié quand quelqu'un aime ma recette</label>
+            </div>
+            
+            <div class="form-checkbox">
+              <input type="checkbox" id="comment-notif" checked>
+              <label for="comment-notif">Être notifié quand quelqu'un commente ma recette</label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <!-- JS -->
+  <script src="js/profile.js"></script>
+</body>
+</html>

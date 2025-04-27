@@ -1,0 +1,120 @@
+/* Create Recipe Page Styles */
+.create-header {
+  background-color: white;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.create-container {
+  max-width: 900px;
+  padding-bottom: 3rem;
+}
+
+.create-container h1 {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--dark-color);
+}
+
+.create-form {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.form-section {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--grey-color);
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 1rem;
+}
+
+.form-section h2 {
+  font-size: 1.3rem;
+  color: var(--dark-color);
+  margin-bottom: 1.5rem;
+}
+
+.help-text {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.create-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.create-form input,
+.create-form select,
+.create-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--grey-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.create-form input:focus,
+.create-form select:focus,
+.create-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Image upload */
+.image-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.upload-placeholder {
+  width: 100%;
+  max-width: 400px;
+  height: 200px;
+  border: 2px dashed var(--grey-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: #777;
+  background-color: #f9f9f9;
+}
+
+.upload-placeholder i {
+  font-size: 3rem;
+}
+
+.upload-placeholder.has-image {
+  border: none;
+  overflow: hidden;
+}
+
+.upload-placeholder.has-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

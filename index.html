@@ -1,40 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CulinApp</title>
-
+  <title>CulinApp - Partagez vos meilleures recettes</title>
+  
   <!-- GOOGLE FONTS -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <!-- CSS -->
-
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
-    <nav id="nav-accueil">
-      <a href="pages/profil-page.html"><img src="" alt="" class="photo-profil"></a>
-    </nav>
-    <img src="" alt="" id="image-accueil">
+    <div class="container header-container">
+      <div class="logo">CulinApp</div>
+      <nav class="main-nav">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="explorer.html">Explorer</a>
+        <a href="#" id="create-recipe-btn" class="btn btn-primary">Créer une recette</a>
+      </nav>
+      <div class="user-profile">
+        <a href="profile.html" id="nav-profile">
+          <img src="images/default-avatar.png" alt="Photo de profil" class="avatar">
+        </a>
+      </div>
+    </div>
+    <div class="hero">
+      <img src="images/hero-image.jpg" alt="Image culinaire" id="image-accueil">
+      <div class="hero-content">
+        <h1>Découvrez et partagez des recettes délicieuses</h1>
+        <p>Rejoignez notre communauté de passionnés de cuisine</p>
+        <a href="signup.html" class="btn btn-large">Rejoindre maintenant</a>
+      </div>
+    </div>
   </header>
-  <button>Créer une recette</button>
-  <main>
-    <nav id="naviguation">
+  
+  <main class="container">
+    <nav id="navigation" class="recipe-navigation">
       <ul>
-        <li><button>Nouveautés</button></li>
-        <li><button>Les votres</button></li>
-        <li><button>Les populaires</button></li>
+        <li><button class="tab-btn active" data-filter="nouveautes">Nouveautés</button></li>
+        <li><button class="tab-btn" data-filter="mes-recettes">Les vôtres</button></li>
+        <li><button class="tab-btn" data-filter="populaires">Les populaires</button></li>
       </ul>
     </nav>
-    <section class="affichage-recettes">
-      <div class="recettes">
-        <img src="" alt="">
-        <h6>Titre</h6>
-        <p>descritption</p>
-        <button class="coup-de-coeur">Coup de coeur</button>
+    
+    <section class="recipes-display">
+      <div class="recipes-grid" id="recipes-container">
+        <!-- Les recettes seront générées dynamiquement ici -->
+        
+        <!-- Exemple de carte de recette -->
+        <div class="recipe-card">
+          <div class="recipe-image">
+            <img src="images/recipe-placeholder.jpg" alt="Tarte aux pommes">
+          </div>
+          <div class="recipe-content">
+            <h3>Tarte aux pommes</h3>
+            <p>Un délicieux dessert traditionnel français avec des pommes caramélisées.</p>
+            <div class="recipe-meta">
+              <span><i class="fas fa-clock"></i> 45 min</span>
+              <span><i class="fas fa-signal"></i> Facile</span>
+            </div>
+            <button class="favorite-btn" title="Ajouter aux favoris">
+              <i class="far fa-heart"></i>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Fin exemple -->
+      </div>
+      
+      <div class="pagination">
+        <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+        <span class="page-info">Page 1 sur 5</span>
+        <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
       </div>
     </section>
-    <button id="btn-suivant"><img src="" alt="flèches"></button>
   </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 CulinApp - Tous droits réservés</p>
+      <div class="footer-links">
+        <a href="#">À propos</a>
+        <a href="#">Conditions d'utilisation</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
 </body>
 </html>

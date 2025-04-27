@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer une recette - CulinApp</title>
+  
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/create-recipe.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="create-header">
+    <div class="container header-container">
+      <div class="logo">CulinApp</div>
+      <nav class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="/pages/profil.html">Mon profil</a>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="container create-container">
+    <h1>Créer une nouvelle recette</h1>
+    
+    <form id="recipe-form" class="create-form">
+      <div class="form-section">
+        <h2>Informations générales</h2>
+        
+        <div class="form-group">
+          <label for="recipe-title">Titre de la recette *</label>
+          <input type="text" id="recipe-title" name="title" required placeholder="Ex: Tarte aux pommes maison">
+        </div>
+        
+        <div class="form-group">
+          <label for="recipe-description">Description *</label>
+          <textarea id="recipe-description" name="description" rows="3" required placeholder="Décrivez brièvement votre recette en quelques phrases"></textarea>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="recipe-time">Temps de préparation (minutes) *</label>
+            <input type="number" id="recipe-time" name="prepTime" min="1" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="recipe-servings">Nombre de personnes *</label>
+            <input type="number" id="recipe-servings" name="servings" min="1" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="recipe-difficulty">Difficulté *</label>
+            <select id="recipe-difficulty" name="difficulty" required>
+              <option value="facile">Facile</option>
+              <option value="moyen">Moyen</option>
+              <option value="difficile">Difficile</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="recipe-category">Catégorie *</label>
+          <select id="recipe-category" name="category" required>
+            <option value="entree">Entrée</option>
+            <option value="plat">Plat principal</option>
+            <option value="dessert">Dessert</option>
+            <option value="boisson">Boisson</option>
+            <option value="aperitif">Apéritif</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <h2>Image de la recette</h2>
+        
+        <div class="image-upload">
+          <div class="upload-placeholder" id="image-preview">
+            <i class="fas fa-image"></i>
+            <p>Aucune image sélectionnée</p>
+          </div>
+          
+          <div class="upload-buttons">
+            <label for="recipe-image" class="btn btn-outline">
+              <i class="fas fa-upload"></i> Sélectionner une image
+            </label>
+            <input type="file" id="recipe-image" name="image" accept="image/*" hidden>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <h2>Ingrédients</h2>
+        <p class="help-text">Ajoutez tous les ingrédients nécessaires à votre recette.</p>
+        
+        <div id="ingredients-container">
+          <div class="ingredient-row">
+            <div class="form-group">
+              <input type="text" name="ingredients[0][name]" placeholder="Nom de l'ingrédient" required>
+            </div>
+            
+            <div class="form-group">
+              <input type="text" name="ingredients[0][quantity]" placeholder="Quantité" required>
+            </div>
+            
+            <div class="form-group">
+              <select name="ingredients[0][unit]">
+                <option value="">Unité</option>
+                <option value="g">Grammes (g)</option>
+                <option value="kg">Kilogrammes (kg)</option>
+                <option value="ml">Millilitres (ml)</option>
+                <option value="l">Litres (l)</option>
+                <option value="c.à.s">Cuillère à soupe</option>
+                <option value="c.à.c">Cuillère à café</option>
+                <option value="pincée">Pincée</option>
+                <option value="unité">Unité</option>
+              </select>
+            </div>
+            
+            <button type="button" class="remove-btn"><i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        
+        <button type="button" id="add-ingredient" class="btn btn-outline">
+          <i class="fas fa-plus"></i> Ajouter un ingrédient
+        </button>
+      </div>
+      
+      <div class="form-section">
+        <h2>Étapes de préparation</h2>
+        <p class="help-text">Décrivez les étapes de préparation de votre recette.</p>
+        
+        <div id="steps-container">
+          <div class="step-row">
+            <div class="step-number">1</div>
+            <div class="form-group">
+              <textarea name="steps[0]" rows="2" placeholder="Décrivez cette étape..." required></textarea>
+            </div>
+            <button type="button" class="remove-btn"><i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        
+        <button type="button" id="add-step" class="btn btn-outline">
+          <i class="fas fa-plus"></i> Ajouter une étape
+        </button>
+      </div>
+      
+      <div class="form-section">
+        <h2>Conseils et astuces (optionnel)</h2>
+        
+        <div class="form-group">
+          <textarea id="recipe-tips" name="tips" rows="3" placeholder="Partagez vos conseils pour réussir cette recette..."></textarea>
+        </div>
+      </div>
+      
+      <div class="form-actions">
+        <button type="button" class="btn btn-outline" id="cancel-recipe">Annuler</button>
+        <button type="submit" class="btn btn-primary">Publier la recette</button>
+      </div>
+    </form>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 CulinApp - Tous droits réservés</p>
+      <div class="footer-links">
+        <a href="#">À propos</a>
+        <a href="#">Conditions d'utilisation</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JS -->
+  <script src="js/create-recipe.js"></script>
+</body>
+</html>
